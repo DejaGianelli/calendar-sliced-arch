@@ -16,6 +16,10 @@ public class GetTodolistDetailsController {
         this.useCase = useCase;
     }
 
+    private static TodolistResponse createResponse(TodolistDetails details) {
+        return new TodolistResponse(details.id().getValue(), details.name());
+    }
+
     @GetMapping("/{guid}")
     public ResponseEntity<?> handle(@PathVariable String guid) {
 
@@ -26,9 +30,5 @@ public class GetTodolistDetailsController {
         TodolistResponse response = createResponse(details);
 
         return ResponseEntity.ok(response);
-    }
-
-    private static TodolistResponse createResponse(TodolistDetails details) {
-        return new TodolistResponse(details.id().getValue(), details.name());
     }
 }

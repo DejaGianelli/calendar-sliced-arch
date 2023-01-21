@@ -6,11 +6,9 @@ import java.util.Optional;
 
 @Getter
 public class Todolist {
-    private TodolistId id;
-
     private final TodolistGuid guid;
-
     private final String name;
+    private TodolistId id;
 
     public Todolist(String name) {
         this.guid = new TodolistGuid();
