@@ -1,9 +1,9 @@
 package com.todoapp.todoapp.features.todolist.create;
 
 import com.todoapp.todoapp.entities.todolist.TodolistGuid;
-import com.todoapp.todoapp.entities.todolist.TodolistId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -21,7 +21,8 @@ public class CreateTodolistController {
     }
 
     @PostMapping
-    public ResponseEntity<?> handle(CreateTodolistRequest request, UriComponentsBuilder uriComponentsBuilder) {
+    public ResponseEntity<?> handle(@RequestBody CreateTodolistRequest request,
+                                    UriComponentsBuilder uriComponentsBuilder) {
         CreateTodolistCommand command = CreateTodolistCommandMapper.map(request);
 
         TodolistGuid guid = useCase.handle(command);

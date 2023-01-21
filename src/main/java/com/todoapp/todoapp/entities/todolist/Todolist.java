@@ -20,4 +20,8 @@ public class Todolist {
     public Optional<TodolistId> getId() {
         return Optional.ofNullable(id);
     }
+
+    public void setId(TodolistId id) {
+        this.id = id;
+    }
 }
