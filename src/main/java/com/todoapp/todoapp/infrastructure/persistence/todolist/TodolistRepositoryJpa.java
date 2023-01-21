@@ -9,11 +9,10 @@ import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Optional;
 
-import static com.todoapp.todoapp.infrastructure.persistence.todolist.Queries.SAVE_TODOLIST_QUERY;
+import static com.todoapp.todoapp.infrastructure.persistence.todolist.SaveTodolistQueries.INSERT_TODOLIST;
 
 @Repository
 public class TodolistRepositoryJpa implements TodolistRepository {
@@ -27,7 +26,7 @@ public class TodolistRepositoryJpa implements TodolistRepository {
     @Override
     @Transactional
     public void save(Todolist todolist) {
-        Query query = entityManager.createNativeQuery(SAVE_TODOLIST_QUERY, BigInteger.class);
+        Query query = entityManager.createNativeQuery(INSERT_TODOLIST, BigInteger.class);
 
         long generatedId = ((BigInteger) query.setParameter("guid", todolist.getGuid().toString())
                 .setParameter("name", todolist.getName())
