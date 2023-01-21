@@ -29,6 +29,6 @@ public class GetTodolistDetailsController {
     }
 
     private static TodolistResponse createResponse(TodolistDetails details) {
-        return new TodolistResponse(details.getId().getValue(), details.getName());
+        return new TodolistResponse(details.id().getValue(), details.name());
     }
 }
