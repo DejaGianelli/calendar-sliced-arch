@@ -8,11 +8,11 @@
         <version>3.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.todoapp</groupId>
-    <artifactId>todo-app</artifactId>
+    <groupId>com.calendarapp</groupId>
+    <artifactId>calendar-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Todo App</name>
-    <description>Sample To-Do App to test Sliced Architecture</description>
+    <name>Calendar App</name>
+    <description>Sample Calendar App to test Sliced Architecture</description>
     <properties>
         <java.version>17</java.version>
     </properties>
